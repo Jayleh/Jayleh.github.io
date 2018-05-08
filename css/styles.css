@@ -1,12 +1,28 @@
-body {
-    font-family: 'Tangerine';
-}
+/* Google Web Fonts */
+@import url('https://fonts.googleapis.com/css?family=Calligraffitti');
 
-
-#main-nav {
+#home-nav {
     position: absolute;
     left: 15%;
-    top: 70%;
-    font-size: 30px;
-    font-weight: 500;
+    top: 65%;
+    font-family: 'Calligraffitti', cursive;
+    font-size: 25px;
 }
+
+#home-name {
+    font-size: 70px;
+    margin-right: 50px;
+}
+
+.main-nav {
+    font-family: 'Calligraffitti', cursive;
+}
+
+.main-name {
+    font-size: 30px;
+    margin-right: 50px;
+}
+
+/* .navbar-toggler {
+    color: blue;
+} */
