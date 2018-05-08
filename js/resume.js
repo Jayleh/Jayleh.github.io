@@ -1,5 +1,5 @@
-// DOM element where the Timeline will be attached
-let container = document.getElementById('timeline');
+// DOM element for timeline
+let $container = document.getElementById('timeline');
 
 // Timeline items styles
 let educationStyle = "color:white;background-color: #003366;border:0px;";
@@ -14,8 +14,60 @@ let items = new vis.DataSet([
     { id: 5, content: 'UCI Data Analytics & Visulization', start: '2018-01-18', style: educationStyle }
 ]);
 
-// Configuration for the Timeline
+
+// Skillset data
+const LANGUAGE = [
+    ["Python", 10],
+    ["Javascript", 6],
+    ["mySQL", 4]
+];
+
+
+
+
+
+// Configuration for the timeline
 let options = {};
 
 // Create a Timeline
-let timeline = new vis.Timeline(container, items, options);
+let timeline = new vis.Timeline($container, items, options);
+
+// Set width and height of svg bubble chart
+let svgHeight = 500;
+let svgWidth = 500;
+
+// DOM element for skillset bubble chart
+let svg = d3.select('#skillset-plot')
+    .append('svg')
+    .attr('height', svgHeight)
+    .attr('width', svgWidth);
+
+let radiusScale = d3.scaleSqrt()
+    .domain([0, 10])
+    .range([10, 50]);
+
+let chartGroup = svg.append('g')
+    .attr('transform', `translate(0, 0)`);
+
+chartGroup.selectAll('circle')
+    .data(LANGUAGE)
+    .enter()
+    .append('circle')
+    .attr('r', data => {
+        return data[1];
+    })
+    .attr("fill", `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`)
+    .attr("cx", data => {
+        return d.x
+    })
+    .attr("cy", data => {
+        return d.y
+    });
+
+
+
+
+
+
+
+
