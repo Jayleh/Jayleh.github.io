@@ -1,0 +1,104 @@
+[
+    [
+        {
+            "name": "Python",
+            "level": 10
+        },
+        {
+            "name": "Pandas",
+            "level": 8
+        },
+        {
+            "name": "Numpy",
+            "level": 8
+        },
+        {
+            "name": "Matplotlib",
+            "level": 6
+        },
+        {
+            "name": "Seaborn",
+            "level": 6
+        },
+        {
+            "name": "Tweepy",
+            "level": 4
+        },
+        {
+            "name": "Splinter",
+            "level": 6
+        },
+        {
+            "name": "Beautiful Soup",
+            "level": 6
+        }
+    ],
+    [
+        {
+            "name": "JavaScript",
+            "level": 10
+        },
+        {
+            "name": "HTML",
+            "level": 8
+        },
+        {
+            "name": "CSS",
+            "level": 8
+        },
+        {
+            "name": "Bootstrap",
+            "level": 6
+        },
+        {
+            "name": "D3",
+            "level": 8
+        },
+        {
+            "name": "Plotly",
+            "level": 8
+        },
+        {
+            "name": "Leaflet",
+            "level": 6
+        }
+    ],
+    [
+        {
+            "name": "API Interactions",
+            "level": 8
+        },
+        {
+            "name": "mySQL",
+            "level": 8
+        },
+        {
+            "name": "MongoDB",
+            "level": 4
+        },
+        {
+            "name": "R",
+            "level": 8
+        },
+        {
+            "name": "Tableau",
+            "level": 4
+        },
+        {
+            "name": "Sci-Kit Learn",
+            "level": 4
+        },
+        {
+            "name": "sqlite",
+            "level": 6
+        },
+        {
+            "name": "Dash",
+            "level": 6
+        },
+        {
+            "name": "Git",
+            "level": 10
+        }
+    ]
+]
