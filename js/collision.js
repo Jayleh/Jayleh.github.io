@@ -1,48 +1,38 @@
-// Skillset data
-const LANGUAGE = [
-    ["Python", 10],
-    ["Javascript", 6],
-    ["mySQL", 4]
-];
+let width = window.innerWidth,
+    height = window.innerHeight / 1.2;
 
+let nodes = d3.range(50).map(function () { return { radius: Math.random() * 12 + 4 }; }),
+    root = nodes[0],
+    color = d3.scale.quantize().domain([1, 50])
+        .range(["#97a675", '#eff2d8', '#d6ead4', '#81b0b2', '#00738c']);
 
-
-let w = 1280,
-    h = 800;
-
-let nodes = d3.range(100).map(function () { return { radius: Math.random() * 12 + 4 }; }),
-    color = d3.scale.category10();
+root.radius = 0;
+root.fixed = true;
 
 let force = d3.layout.force()
     .gravity(0.05)
     .charge(function (d, i) { return i ? 0 : -2000; })
     .nodes(nodes)
-    .size([w, h]);
-
-let root = nodes[0];
-root.radius = 0;
-root.fixed = true;
+    .size([width, height]);
 
 force.start();
 
-let svg = d3.select("#body").append("svg:svg")
-    .attr("width", w)
-    .attr("height", h);
+let svg = d3.select("#collision").append("svg")
+    .attr("width", width)
+    .attr("height", height);
 
 svg.selectAll("circle")
     .data(nodes.slice(1))
-    .enter().append("svg:circle")
-    .attr("r", function (d) { return d.radius - 2; })
-    .style("fill", function (d, i) { return color(i % 3); });
+    .enter().append("circle")
+    .attr("r", function (d) { return d.radius; })
+    .style("fill", function (d, i) { return color(i); });
 
 force.on("tick", function (e) {
     let q = d3.geom.quadtree(nodes),
         i = 0,
         n = nodes.length;
 
-    while (++i < n) {
-        q.visit(collide(nodes[i]));
-    }
+    while (++i < n) q.visit(collide(nodes[i]));
 
     svg.selectAll("circle")
         .attr("cx", function (d) { return d.x; })
@@ -50,7 +40,7 @@ force.on("tick", function (e) {
 });
 
 svg.on("mousemove", function () {
-    let p1 = d3.svg.mouse(this);
+    let p1 = d3.mouse(this);
     root.px = p1[0];
     root.py = p1[1];
     force.resume();
@@ -76,9 +66,6 @@ function collide(node) {
                 quad.point.y += y;
             }
         }
-        return x1 > nx2
-            || x2 < nx1
-            || y1 > ny2
-            || y2 < ny1;
+        return x1 > nx2 || x2 < nx1 || y1 > ny2 || y2 < ny1;
     };
 }

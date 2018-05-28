@@ -57,6 +57,19 @@
         <div class="row">
           <div class="col-md-8">
             <h4>Skillset</h4>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="python-radio" value="0" onclick="changeValues(this.value)"
+                checked>
+              <label class="form-check-label" for="python-radio">Python</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="frontend-radio" value="1" onclick="changeValues(this.value)">
+              <label class="form-check-label" for="frontend-radio">Visualization</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="other-radio" value="2" onclick="changeValues(this.value)">
+              <label class="form-check-label" for="other-radio">Other Tools</label>
+            </div>
             <div id="skillset-plot"></div>
           </div>
           <div class="col-md-4">

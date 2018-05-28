@@ -22,32 +22,37 @@ let timeline = new vis.Timeline($container, items, options);
 
 
 // Force skillset diagram
-(function () {
-    // Set width and height of svg bubble chart
-    let svgHeight = 500,
-        svgWidth = 500;
+// Set width and height of svg bubble chart
+let svgHeight = 500,
+    svgWidth = 500;
 
-    // DOM element for skillset bubble chart
-    let svg = d3.select('#skillset-plot')
-        .append('svg')
-        .attr('height', svgHeight)
-        .attr('width', svgWidth);
+// DOM element for skillset bubble chart
+let svg = d3.select('#skillset-plot')
+    .append('svg')
+    .attr('height', svgHeight)
+    .attr('width', svgWidth);
 
-    let chartGroup = svg.append('g')
-        .attr('transform', `translate(0, 0)`);
+let chartGroup = svg.append('g')
+    .attr('transform', `translate(250, 0)`);
 
-    let radiusScale = d3.scaleSqrt()
-        .domain([4, 10])
-        .range([40, 60]);
+let radiusScale = d3.scaleSqrt()
+    .domain([4, 10])
+    .range([40, 60]);
 
-    // Simulation is a collection of forces about where we want our
-    // circles to go and how we want our circles to interact
-    // First, get them to the middle, then don't have them collide
-    let simulation = d3.forceSimulation()
-        .force('x', d3.forceX(svgWidth / 2).strength(0.05))
-        .force('y', d3.forceY(svgWidth / 2).strength(0.05))
-        .force('collide', d3.forceCollide(d => radiusScale(d.level + 0.1)));
+// Simulation is a collection of forces about where we want our
+// circles to go and how we want our circles to interact
+// First, get them to the middle, then don't have them collide
+// Define forces
+let xForce = d3.forceX(0).strength(0.05),
+    yForce = d3.forceY(svgWidth / 2).strength(0.05),
+    collideForce = d3.forceCollide(d => radiusScale(d.level + 0.1));
 
+let simulation = d3.forceSimulation()
+    .force('x', xForce)
+    .force('y', yForce)
+    .force('collide', collideForce);
+
+function initSkill(index) {
     // Grab skillset data json
     d3.queue()
         .defer(d3.json, "../js/data/skillset.json")
@@ -56,16 +61,22 @@ let timeline = new vis.Timeline($container, items, options);
     function ready(error, datapoints) {
         if (error) throw error;
 
-        console.log(datapoints[0]);
+        // console.log(datapoints[index]);
 
-        let python = datapoints[0];
-        let frontend = datapoints[1];
-        let other = datapoints[2];
+        let category = datapoints[index];
+
+        // Delete existing circles and text
+        d3.select('#skill-circle')
+            .remove();
+
+        d3.select('#skill-text')
+            .remove();
 
         // Create circle group
         let circles = chartGroup.append('g')
+            .attr('id', 'skill-circle')
             .selectAll('circle')
-            .data(python)
+            .data(category)
             .enter()
             .append('circle')
             // .attr('r', data => data.level * 3)
@@ -74,8 +85,9 @@ let timeline = new vis.Timeline($container, items, options);
 
         // Create text
         let text = chartGroup.append('g')
+            .attr('id', 'skill-text')
             .selectAll("text")
-            .data(python)
+            .data(category)
             .enter()
             .append("text")
             .classed('text', true)
@@ -84,7 +96,7 @@ let timeline = new vis.Timeline($container, items, options);
             .attr("text-anchor", "middle")
             .attr("fill", "white");
 
-        simulation.nodes(python)
+        simulation.nodes(category)
             .on('tick', ticked);
 
         function ticked() {
@@ -97,21 +109,19 @@ let timeline = new vis.Timeline($container, items, options);
                 .attr('y', d => d.y);
         }
     }
+}
 
-})(); // Initialize function on load
-
-
-
+initSkill(0); // Initialize function on load
 
 
+function changeValues(index) {
 
+    initSkill(index);
 
-
-
-
-
-
-
-
-
-
+    simulation
+        .force('x', xForce)
+        .force('y', yForce)
+        .force('collide', collideForce)
+        .alphaTarget(0.5)
+        .restart();
+}
