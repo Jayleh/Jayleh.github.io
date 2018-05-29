@@ -1,16 +1,12 @@
 [
     [
         {
-            "name": "Python",
-            "level": 10
-        },
-        {
             "name": "Pandas",
-            "level": 8
+            "level": 7
         },
         {
             "name": "Numpy",
-            "level": 8
+            "level": 7
         },
         {
             "name": "Matplotlib",
@@ -18,7 +14,7 @@
         },
         {
             "name": "Seaborn",
-            "level": 6
+            "level": 2
         },
         {
             "name": "Tweepy",
@@ -29,15 +25,15 @@
             "level": 6
         },
         {
+            "name": "Python",
+            "level": 10
+        },
+        {
             "name": "Beautiful Soup",
             "level": 6
         }
     ],
     [
-        {
-            "name": "JavaScript",
-            "level": 10
-        },
         {
             "name": "HTML",
             "level": 8
@@ -45,6 +41,10 @@
         {
             "name": "CSS",
             "level": 8
+        },
+        {
+            "name": "JavaScript",
+            "level": 10
         },
         {
             "name": "Bootstrap",

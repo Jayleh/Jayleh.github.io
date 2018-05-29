@@ -1,9 +1,9 @@
-let width = window.innerWidth,
-    height = window.innerHeight / 1.2;
+let width = window.innerWidth * 0.95,
+    height = window.innerHeight;
 
-let nodes = d3.range(50).map(function () { return { radius: Math.random() * 12 + 4 }; }),
+let nodes = d3.range(80).map(function () { return { radius: Math.random() * 12 + 4 }; }),
     root = nodes[0],
-    color = d3.scale.quantize().domain([1, 50])
+    color = d3.scale.quantize().domain([1, 80])
         .range(["#97a675", '#eff2d8', '#d6ead4', '#81b0b2', '#00738c']);
 
 root.radius = 0;
@@ -11,7 +11,7 @@ root.fixed = true;
 
 let force = d3.layout.force()
     .gravity(0.05)
-    .charge(function (d, i) { return i ? 0 : -2000; })
+    .charge(function (d, i) { return i ? 0 : -1000; })
     .nodes(nodes)
     .size([width, height]);
 
@@ -20,6 +20,7 @@ force.start();
 let svg = d3.select("#collision").append("svg")
     .attr("width", width)
     .attr("height", height);
+// .attr("class", "justify-content-center");
 
 svg.selectAll("circle")
     .data(nodes.slice(1))
@@ -59,7 +60,7 @@ function collide(node) {
                 l = Math.sqrt(x * x + y * y),
                 r = node.radius + quad.point.radius;
             if (l < r) {
-                l = (l - r) / l * .5;
+                l = (l - r) / l * 0.5;
                 node.x -= x *= l;
                 node.y -= y *= l;
                 quad.point.x += x;

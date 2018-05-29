@@ -33,7 +33,7 @@ let svg = d3.select('#skillset-plot')
     .attr('width', svgWidth);
 
 let chartGroup = svg.append('g')
-    .attr('transform', `translate(250, 0)`);
+    .attr('transform', `translate(200, 0)`);
 
 let radiusScale = d3.scaleSqrt()
     .domain([4, 10])
@@ -43,9 +43,9 @@ let radiusScale = d3.scaleSqrt()
 // circles to go and how we want our circles to interact
 // First, get them to the middle, then don't have them collide
 // Define forces
-let xForce = d3.forceX(0).strength(0.05),
+let xForce = d3.forceX(svgHeight / 10).strength(0.05),
     yForce = d3.forceY(svgWidth / 2).strength(0.05),
-    collideForce = d3.forceCollide(d => radiusScale(d.level + 0.1));
+    collideForce = d3.forceCollide(d => radiusScale(d.level + 1));
 
 let simulation = d3.forceSimulation()
     .force('x', xForce)

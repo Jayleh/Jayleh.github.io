@@ -2,15 +2,17 @@
 @import url('https://fonts.googleapis.com/css?family=Calligraffitti');
 
 #home-nav {
-    position: absolute;
-    left: 15%;
-    top: 65%;
     font-family: 'Calligraffitti', cursive;
-    font-size: 25px;
+    font-size: 24px;
 }
 
-#home-name {
+/* #home-name {
     font-size: 70px;
+    margin-right: 50px;
+} */
+
+.main-name {
+    font-size: 30px;
     margin-right: 50px;
 }
 
@@ -18,9 +20,15 @@
     font-family: 'Calligraffitti', cursive;
 }
 
-.main-name {
-    font-size: 30px;
-    margin-right: 50px;
+svg {
+    display: block;
+    margin: auto;
+}
+
+#collision {
+    position: absolute;
+    top: 0;
+    z-index: -1;
 }
 
 /* .navbar-toggler {
