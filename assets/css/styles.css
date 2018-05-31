@@ -11,6 +11,21 @@
     margin-right: 50px;
 } */
 
+#head-slider {
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+}
+
+/* #head-slider p {
+    text-align: center;
+    color: black;
+    padding: 1em 0;
+    font-size: 180%;
+    font-weight: 400;
+    font-family: brandon-grotesque,HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+} */
+
 .main-name {
     font-size: 30px;
     margin-right: 50px;
@@ -22,7 +37,7 @@
 
 svg {
     display: block;
-    margin: auto;
+    margin: 0 auto;
 }
 
 #collision {
