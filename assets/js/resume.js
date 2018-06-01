@@ -55,7 +55,7 @@ let simulation = d3.forceSimulation()
 function initSkill(index) {
     // Grab skillset data json
     d3.queue()
-        .defer(d3.json, "../js/data/skillset.json")
+        .defer(d3.json, "../assets/js/data/skillset.json")
         .await(ready); // calls the ready function
 
     function ready(error, datapoints) {
