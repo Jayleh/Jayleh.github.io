@@ -1,7 +1,7 @@
 let width = window.innerWidth * 0.95,
     height = window.innerHeight;
 
-let nodes = d3.range(80).map(function () { return { radius: Math.random() * 12 + 4 }; }),
+let nodes = d3.range(100).map(function () { return { radius: Math.random() * 12 + 4 }; }),
     root = nodes[0],
     color = d3.scale.quantize().domain([1, 80])
         .range(["#97a675", '#eff2d8', '#d6ead4', '#81b0b2', '#00738c']);
