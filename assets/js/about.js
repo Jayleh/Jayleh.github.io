@@ -21,7 +21,7 @@ $(window).on('scroll', function () {
     }
     else {
         $('#top')
-            .css('top', '-70px');
+            .css('top', '-84px');
     }
 
     prevScrollPos = currentScrollPos;

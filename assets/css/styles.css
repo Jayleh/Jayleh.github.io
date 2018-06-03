@@ -6,9 +6,18 @@ body {
 }
 
 #top {
-    font-size: 16px;
     transition: 0.5s;
     padding: 10px;
+    font-size: 16px;
+}
+
+#brand-name {
+    padding: 10px;
+    padding-left: 0;
+} 
+
+nav .container a:hover {
+    color: black;
 }
 
 .nav-item {
