@@ -13,11 +13,14 @@ body {
 
 #brand-name {
     padding: 10px;
-    padding-left: 0;
 } 
 
 nav .container a:hover {
     color: black;
+}
+
+#navbarNavAltMarkup a {
+    padding-left: 10px;
 }
 
 .nav-item {
@@ -29,7 +32,7 @@ nav .container a:hover {
 }
 
 #intro {
-    margin-top: -70px;
+    margin-top: -84px;
     width: 100%;
     height: 100vh;
     background: url('../img/bg.jpg');
@@ -50,22 +53,30 @@ svg {
     margin: 0 auto;
 }
 
-#collision {
-    position: absolute;
-    top: 0;
+#visual {
+    margin-top: -84px;
+    width: 100%;
+    height: 100vh;
     z-index: -1;
+}
+
+#collision {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
 }
 
 @media (min-width: 992px) {
 
     #brand-name {
         position: relative;
-        left: 25%;
+        left: 30%;
     } 
     
     #navbarNavAltMarkup {
         position: relative;
-        right: 25%;
+        right: 30%;
     }
 
 }
