@@ -1,38 +1,39 @@
 /* Google Web Fonts */
-@import url('https://fonts.googleapis.com/css?family=Calligraffitti');
+@import url('https://fonts.googleapis.com/css?family=Lato');
 
-#home-nav {
-    font-family: 'Calligraffitti', cursive;
-    font-size: 24px;
+body {
+    font-family: 'Lato', sans-serif;
 }
 
-/* #home-name {
-    font-size: 70px;
-    margin-right: 50px;
-} */
-
-#head-slider {
-    text-align: center;
-    position: fixed;
-    bottom: 0;
+#top {
+    font-size: 16px;
+    transition: 0.5s;
+    padding: 10px;
 }
 
-/* #head-slider p {
-    text-align: center;
+.nav-item {
     color: black;
-    padding: 1em 0;
-    font-size: 180%;
-    font-weight: 400;
-    font-family: brandon-grotesque,HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
-} */
-
-.main-name {
-    font-size: 30px;
-    margin-right: 50px;
 }
 
-.main-nav {
-    font-family: 'Calligraffitti', cursive;
+.navbar-toggler {
+    padding: 0;
+}
+
+#intro {
+    margin-top: -70px;
+    width: 100%;
+    height: 100vh;
+    background: url('../img/bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+#intro h1, #intro p {
+    text-align: center;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
 }
 
 svg {
@@ -46,6 +47,20 @@ svg {
     z-index: -1;
 }
 
-/* .navbar-toggler {
-    color: blue;
-} */
+@media (min-width: 992px) {
+
+    #brand-name {
+        position: relative;
+        left: 25%;
+    } 
+    
+    #navbarNavAltMarkup {
+        position: relative;
+        right: 25%;
+    }
+
+}
+
+
+
+
