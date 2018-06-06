@@ -39,7 +39,7 @@ nav .container a:hover {
 #intro {
     margin-top: -132.5px;
     width: 100%;
-    height: 90vh;
+    min-height: 90vh;
     background: url('../img/bg.svg');
     background-size: cover;
     background-position: center;
