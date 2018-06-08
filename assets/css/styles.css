@@ -39,7 +39,7 @@ nav .container a:hover {
 #intro {
     margin-top: -132.5px;
     width: 100%;
-    min-height: 90vh;
+    height: 90vh;
     background: url('../img/bg.svg');
     background-size: cover;
     background-position: center;
@@ -48,7 +48,7 @@ nav .container a:hover {
 #intro h1, #intro p {
     text-align: center;
     position: relative;
-    top: 30%;
+    top: 35%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
 }
