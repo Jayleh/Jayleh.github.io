@@ -20,6 +20,26 @@ body {
     padding: 0;
 }
 
+#collision {
+    padding: 0;
+    overflow: hidden;
+}
+
+#collision svg {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(0%);
+}
+
+
+
+
+
+
+
+
+
 #intro {
     margin-top: -70px;
     width: 100%;

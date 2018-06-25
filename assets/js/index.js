@@ -1,5 +1,5 @@
-let width = window.innerWidth * 0.95,
-    height = window.innerHeight;
+let width = 500,
+    height = 500;
 
 let nodes = d3.range(100).map(function () { return { radius: Math.random() * 12 + 4 }; }),
     root = nodes[0],
