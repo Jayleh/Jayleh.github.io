@@ -1,72 +1,33 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
 body {
-    margin: 0;
-    padding: 0;
     font-family: 'Lato', sans-serif;
 }
 
-#top {
-    font-size: 16px;
-    transition: 0.5s;
-    padding: 10px;
-}
-
-.nav-item {
-    color: black;
-}
-
-.navbar-toggler {
-    padding: 0;
-}
-
-#collision {
-    padding: 0;
-    overflow: hidden;
-}
-
 #collision svg {
-    position: relative;
+    position: absolute;
     top: 50%;
     left: 50%;
-    transform: translateX(-50%) translateY(0%);
+    transform: translate(-50%, -50%);
 }
 
 
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
 
-
-
-
-
-
-
-#intro {
-    margin-top: -70px;
-    width: 100%;
-    height: 100vh;
-    background: url('../img/bg.jpg');
-    background-size: cover;
-    background-position: center;
 }
 
-#intro h1, #intro p {
-    text-align: center;
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
 }
 
+/* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
 
-    #brand-name {
-        position: relative;
-        left: 25%;
-    } 
-    
-    #navbarNavAltMarkup {
-        position: relative;
-        right: 25%;
-    }
+}
 
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    
 }
