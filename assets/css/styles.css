@@ -9,100 +9,25 @@ html, body {
     font-family: 'Lato', sans-serif;
 }
 
-#top {
-    transition: 0.5s;
-    transition-delay: 0.3s;
-    padding: 10px;
-    font-size: 16px;
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+
 }
 
-#brand-name {
-    padding: 10px;
-} 
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
 
-nav .container a:hover {
-    color: black;
 }
 
-#navbarNavAltMarkup a {
-    padding-left: 10px;
-}
-
-.nav-item {
-    color: black;
-}
-
-.navbar-toggler {
-    padding: 0;
-}
-
-#intro {
-    margin-top: -132.5px;
-    width: 100%;
-    height: 90vh;
-    background: url('../img/bg.svg');
-    background-size: cover;
-    background-position: center;
-}
-
-#intro h1, #intro p {
-    text-align: center;
-    position: relative;
-    top: 35%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-}
-
-main article {
-    text-align: center;
-    margin: 0 auto;
-    max-width: 460px;
-}
-
-footer {
-    /* background: #c5ded7; */
-    padding: 3em 0;
-}
-
-#copyright p {
-    text-align: center;
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-}
-
-svg {
-    display: block;
-    margin: 0 auto;
-}
-
-#visual {
-    margin-top: -132.5px;
-    width: 100%;
-    height: 100vh;
-    z-index: -1;
-}
-
-#collision {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-}
-
+/* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
 
-    #brand-logo {
-        position: relative;
-        left: 30%;
-    } 
-    
-    #navbarNavAltMarkup {
-        position: relative;
-        right: 30%;
-    }
+}
 
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    
 }
 
 
